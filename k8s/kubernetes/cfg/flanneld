@@ -1,0 +1,1 @@
+FLANNEL_OPTIONS="--etcd-endpoints=https://10.0.0.101:2379,https://10.0.0.102:2379,https://10.0.0.103:2379 -etcd-cafile=/k8s/etcd/ssl/ca.pem -etcd-certfile=/k8s/etcd/ssl/server.pem -etcd-keyfile=/k8s/etcd/ssl/server-key.pem -etcd-prefix=/k8s/network"

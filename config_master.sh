@@ -15,13 +15,14 @@ echo "Install etcd done."
 
 echo "Install kubernetes..."
 cd /vagrant
-if [[ ! -f kubernetes-server-linux-amd64.tar.gz ]]; then
+if [[ ! -f "kubernetes-server-linux-amd64.tar.gz" ]]; then
     wget https://dl.k8s.io/v1.13.1/kubernetes-server-linux-amd64.tar.gz
 fi
 tar -zxvf kubernetes-server-linux-amd64.tar.gz 
 cp kubernetes/server/bin/kube-scheduler kubernetes/server/bin/kube-apiserver kubernetes/server/bin/kube-controller-manager kubernetes/server/bin/kubectl kubernetes/server/bin/kubeadm /k8s/kubernetes/bin/
 echo "Install kubernetes done."
 echo "PATH=/k8s/kubernetes/bin:/k8s/etcd/bin:$PATH" >> /etc/profile
+source /etc/profile
 
 echo "Config systemd..."
 cp /vagrant/systemd/etcd.service /usr/lib/systemd/system/etcd.service
@@ -37,6 +38,3 @@ echo "Config systemd done."
 
 echo "Starting etcd..."
 nohup systemctl start etcd &
-
-# check etcd status
-# /k8s/etcd/bin/etcdctl --cacert=/k8s/etcd/ssl/ca.pem --cert=/k8s/etcd/ssl/server.pem --key=/k8s/etcd/ssl/server-key.pem --endpoints="https://10.0.0.101:2379,https://10.0.0.102:2379,https://10.0.0.103:2379"
