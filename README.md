@@ -4,7 +4,7 @@
 
 ## About
 
-This project provides an easy way to create a basic Kubernetes cluster almost automatically on your local machine **within 3 steps**.
+This project provides an easy way to create a basic Kubernetes1.13 cluster almost automatically on your local machine **within 3 steps**.
 
 This project uses [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) to batch create and destroy virtual machines conveniently.
 
