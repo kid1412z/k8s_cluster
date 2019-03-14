@@ -52,9 +52,10 @@ $ kubectl kubectl certificate approve ${NAME_YOU_SEE_IN_THE_LIST}
 ...
 ```
 ![](resources/3.png)
-![](resources/4.png)
 
 Now you get a Kubernetes cluster on your machine! Enjoy!
+
+![](resources/4.png)
 
 ## Cluster Detail
 
